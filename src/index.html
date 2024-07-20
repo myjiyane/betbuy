@@ -1,17 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to BetBuy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+        }
+        button {
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
+    <div class="form-container">
+        <h2>Welcome! Please Fill Your Details</h2>
+        <form id="splashForm">
+            <input type="text" id="fullName" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email Address" required>
+            <input type="tel" id="cellphone" placeholder="Cellphone Number" required>
+            <input type="checkbox" id="terms" required> I accept the <a href="terms.html" target="_blank">terms and conditions</a>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
-</html>
+    <script>
+        document.getElementById('splashForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const cellphone = document.getElementById('cellphone').value;
+
+            // Optionally, send data to your server or database here
+
+            // Redirect to e-commerce site if terms are accepted
+            if (document.getElementById('terms').checked) {
+                window.location.href = 'https://your-ecommerce-site.com'; // Replace with your actual e-commerce URL
+            }
+        });
+    </script>
+</body>
+</html> 
