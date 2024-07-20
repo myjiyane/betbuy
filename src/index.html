@@ -3,21 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to BetBuy</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+    <title>Welcome to BitBuy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your custom CSS -->
 </head>
 <body>
-    <div class="form-container">
-        <h2>Welcome! Please Fill Your Details</h2>
-        <form id="splashForm">
-            <input type="text" id="fullName" placeholder="Full Name" required>
-            <input type="email" id="email" placeholder="Email Address" required>
-            <input type="tel" id="cellphone" placeholder="Cellphone Number" required>
-            <input type="checkbox" id="terms" required> I accept the <a href="terms.html" target="_blank">terms and conditions</a>
-            <button type="submit">Submit</button>
-        </form>
+    <div class="container">
+        <header class="text-center my-5">
+            <h1>Welcome to BitBuy!</h1>
+            <p class="lead">Enjoy unlimited access to our fast and secure Wi-Fi network for the first hour, completely free of charge.</p>
+        </header>
+
+        <section class="services mb-5">
+            <h2>About BitBuy</h2>
+            <p>BitBuy is an innovative e-commerce platform that offers a wide range of digital products and services tailored to the needs of our community. Our mission is to provide convenient and affordable access to essential services, entertainment, and more.</p>
+            <h3>Services Offered</h3>
+            <ul class="list-group">
+                <li class="list-group-item">Data Bundles: Stay connected with our affordable mobile data packages.</li>
+                <li class="list-group-item">Lottery Tickets: Try your luck with our selection of lottery games.</li>
+                <li class="list-group-item">Sports Betting: Get in on the action with our live sports betting options.</li>
+                <li class="list-group-item">Event Tickets: Find tickets for local concerts, festivals, and sports events.</li>
+                <li class="list-group-item">Vouchers: Discover discounts and deals from our partner businesses.</li>
+            </ul>
+        </section>
+
+        <section class="form-section text-center mb-5">
+            <h2>Get Started</h2>
+            <p>To begin your free Wi-Fi session and access our e-commerce services, please enter your details below:</p>
+            <form id="splashForm">
+                <div class="form-group">
+                    <input type="text" id="fullName" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" class="form-control" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="cellphone" class="form-control" placeholder="Cellphone Number" required>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="terms">
+                    <label class="form-check-label" for="terms">I accept the <a href="conditions.html" target="_blank">terms and conditions</a></label>
+                </div>
+                <button type="submit" class="btn btn-primary" id="submitButton" disabled>Connect</button>
+            </form>
+        </section>
     </div>
 
-    <script src="script.js"></script> <!-- Link to the JavaScript file -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        const termsCheckbox = document.getElementById('terms');
+        const submitButton = document.getElementById('submitButton');
+
+        termsCheckbox.addEventListener('change', function() {
+            submitButton.disabled = !this.checked;
+        });
+
+        document.getElementById('splashForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const cellphone = document.getElementById('cellphone').value;
+
+            if (termsCheckbox.checked) {
+                window.location.href = 'https://your-ecommerce-site.com'; 
+            }
+        });
+    </script>
 </body>
 </html>
