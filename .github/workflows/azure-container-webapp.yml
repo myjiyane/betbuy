@@ -28,6 +28,7 @@ jobs:
           app_location: "src" # Pointing to the src folder
           api_location: "" # No API
           output_location: "/" # No build output directory needed
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_DESERT_02C67890F }} # Add your deployment token here
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
