@@ -7,6 +7,15 @@ header {
   margin-bottom: 30px;
 }
 
+.logo {
+  width: 150px; /* Adjust the width of the logo */
+  margin-bottom: 20px; /* Space between logo and heading */
+  border: 2px solid #007bff; /* Blue border around the logo */
+  border-radius: 5px; /* Rounded corners for the border */
+  padding: 5px; /* Padding inside the border */
+  background-color: #ffffff; /* White background for the logo area */
+}
+
 .services, .form-section, .terms {
   background-color: #ffffff; /* White background for sections */
   padding: 15px; /* Padding for sections */
